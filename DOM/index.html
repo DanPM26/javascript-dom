@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="./styles.css" >
+</head>
+<body>
+
+<!--Ejercicios de DOM -->
+<body>Hola, Mundo</body>
+<p> Lorem ipsum</p>
+<img src="./assets/cipher.jpg">
+
+<button id="botonvisible" onclick="visible()">¿Quien es Cipher?</button>
+<p id="miparrafo">Es un demonio capaz de entrar en la mente y tomar el cuerpo de una persona. Puede ser invocado utilizando un encantamiento que se encuentra en el Libro 2. En Recuperar El Pueblo es asesinado por Stanford Pines, junto a la mente de Stanley Pines, que después de un tiempo vuelve a la normalidad.</p>
+
+
+<h2>Cipher del otro lado de la vida está aburrido y te pide que juegues con él a acertar el número que piensa del 1 al 10 </h2>
+<div class="formulario">
+      <label for="adivina">Adivina el número: </label>
+      <input type = "text" id = "adivina" class = "adivina">
+      <input type = "submit" value = "Enviar adivinación" class = "enviaradivina" id ="enviaradivina"       onclick="adivina()" >
+      </div>
+      
+<p id="result"></p>
+
+
+<!--- Conversor de monedas -->
+<h1> Convertir monedas</h1>
+
+<label for="pesos"> Convertir pesos a: </label>
+     <input type="text" id="pesos">
+     <input type="button" onclick="pesos()" value="Enviar">
+<p id="resultado1">Euros</p>
+
+<label for="euros"> Convertir Euros a: </label>
+      <input type="text" id="euros">
+      <input type="button" onclick="euros()" value="Enviar">
+<p id="resultado2"> Dolares: </p>
+
+<label for="dolares"> Convertir pesos a: </label>
+     <input type="text" id="dolares">
+     <input type="button" onclick="dolares()" value="Enviar">
+<p id="resultado3">Bitcoin:</p>
+
+<!--Localstorage-->
+
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" />
+
+<label for="nombre">Password:</label>
+<input type="text" id="password" />
+
+<input type="button" onclick="guardarDatos()" value="Guardar datos" />
+ 
+<p id="datos">Pulsa para ver tu nombre y tu password.</p>
+<input type="button" onclick="recuperarDatos()" value="Recuperar datos" />
+
+<!---Ejericio básico de guardar clicks-->
+<h1>Clickeame y observa cuantos clicks incrementa</h1>
+<button onclick="clickCounter()">Click aquí</button>
+<div id="result2"></div>
+
+
+<script src="./index.js"></script>
+</body>
+</html>
