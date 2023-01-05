@@ -1,33 +1,3 @@
-//  function guardar(){
-//  //Capturar los datos de los inputs
-//  let nom = document.getElementById("nombretxt").value;
-//  let apelli = document.getElementById("apellidotxt").value;
-//  let age = document.getElementById("edadtxt").value;
-//  //Guardar los datos en el localstorage
-//  localStorage.setItem("Nombre",nom);
-//  localStorage.setItem("Apellido",apelli);
-//  localStorage.setItem("Edad",age);
-//   //Limpiar los campos o inputs
-//   localStorage.getElementById("nombretxt").value = "";
-//   localStorage.getElementById("apellidotxt").value = "";
-//   localStorage.getElementById("edadtxt").value =""; 
-//   render()
-//  }
-//  function render(){
-     
-//      //Obtener datos alamacenados
-//      let nombre = localStorage.getItem("Nombre");
-//      let apellido = localStorage.getItem("Apellido");
-//      let edad = localStorage.getItem("Edad");
-//      //mostrar datos almacenados 
-//      document.getElementById("nombre").innerHTML = nombre; 
-//      document.getElementById("apellido").innerHTML = apellido;
-//      document.getElementById("edad").innerHTML = edad; 
-//  }
-
-//  render()
-
-
 function guardar(){
     //Capturar los datos de los inputs
   let nom = document.getElementById("nombretxt").value;
