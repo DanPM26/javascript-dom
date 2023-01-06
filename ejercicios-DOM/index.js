@@ -3,6 +3,7 @@ function guardar(){
   let nom = document.getElementById("nombretxt").value;
   let apelli = document.getElementById("apellidotxt").value;
   let age = document.getElementById("edadtxt").value;
+
    // Fuardamos los valores en una variable
   let inputValues = ({
     "nombre": nom,
@@ -11,11 +12,13 @@ function guardar(){
   })
 
   //Guardar los datos en un array 
-  //let datos = new Array();
+  //let datos = new Array(); -> aunque no es tan necesario
+  // Recordemos que localstorage obtiene los valores como cadenas de texto por lo que el JSON.parse convierte las cadenas de texto en JSON (objetos) -> A su vez, añadimos el operador ternario bajo la sintaxis : condicional ? expresion1 : expresion2 
   let datos = JSON.parse(localStorage.getItem('usuarios')) ? JSON.parse(localStorage.getItem('usuarios')) : []
   console.log(inputValues)
   datos.push(inputValues)
   console.log(datos)
+  // Una vez obteniendo los objetos , los convertiremos a strings
  console.log(JSON.stringify(datos))
  localStorage.setItem('usuarios', JSON.stringify(datos))
 //Guardar los datos en el localstorage
@@ -46,10 +49,13 @@ render()
 
 // Segundo ejercicio
 
+// Evento keydown, se produce cuando se presiona una tecla 
 document.addEventListener('keydown',zoomIn);
  function zoomIn(e){
+  // propiedad KEYCODE que va a leer el elemento en ASCII en este caso la tecla de arriba es el 38 
      if(e.keyCode == '38'){
        let myImage = document.getElementById('baloon');
+       // utilizaremos la propiedad CLIENWIDTH ya que devuelve  el ancho visible de un elemento en píxeles, incluido el relleno, pero no el borde, la barra de desplazamiento o el margen.
        let changewith = myImage.clientWidth;
        if(changewith >= 120){
         alert('Es el nivel maximo')
