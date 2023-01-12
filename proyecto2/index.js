@@ -18,7 +18,8 @@ function guardar(){
 
     document.getElementById('nombretxt').value = ''
     document.getElementById('correotxt').value = ''
-    document.getElementById('comentariostxt').value = ''
+    document.getElementById('comentariotxt').value = ''
+
  render()
 }
 
@@ -26,15 +27,22 @@ function render(){
     console.log(localStorage.getItem('comentarios'))
     let lista = document.getElementById('lista')
     let datos = JSON.parse(localStorage.getItem('comentarios')) ? JSON.parse(localStorage.getItem('comentarios')) : []
-    lista.innerHTML = ''
+    lista.innerHTML = `
+    <thead>
+    <th>Nombre</th>
+    <th>Correo</th>
+    <th>Comentario</th>
+    <thead>
+
+    `
     datos.forEach((element,index) => {
         console.log(index)
         lista.innerHTML += `
         <td> ${element.nombre}</td>
         <td> ${element.correo} </td>
         <td> ${element.comentario} </td>
-        <button onclick="edit(${index})">Editar </button>
-        <button onclick="borrar(${index})">Borrar</button>
+        <td><button onclick="edit(${index})" class="btn btn-warning">Editar </button></td>
+        <td><button onclick="borrar(${index})" class="btn btn-danger">Borrar</button></td>
         `
     });
 
@@ -52,14 +60,23 @@ function render(){
  //Boton editar
 
   function edit(){
-     let editar = document.getElementById("editar")
-     editar.innerHTML = `
-     <td><input placeholder="Nombre" id="nombredit"></input> </td>
+     let lista = document.getElementById('lista')
+    
+      lista.innerHTML = `
+      <thead>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Comentario</th>
+      <thead>
+      <tbody class="table-warning">
+     <td><input placeholder="Nombre" id="nombredit"></input></td>
      <td><input placeholder="Correo" id="correoedit" ></input> </td>
      <td><input placeholder="Comentario" id="comentedit"></input> </td>
-     <td><button onclick="reguardar()">Guardar</button> </td>
-     <td><button onclick="cerrar(this)">Cerrar</button> </td>
-     `
+     <td><button onclick="reguardar()"  class="btn btn-primary" >Guardar</button> </td>
+      <td><button onclick="cerrar(this)" class="btn btn-danger" >Cerrar</button> </td>
+      <tbody>
+      `
+
  }
 
   function reguardar(element){
